@@ -4,11 +4,14 @@ Capture screenshots yourself during the authorized assessment. Do not use screen
 
 | Filename | Suggested caption / what to capture | Status |
 |---|---|---|
-| `reconnaissance.png` | Figure 1 — Browser showing the authorized target and application page(s) inspected. Avoid exposing personal data. | Pending |
-| `nmap.png` | Figure 2 — Nmap output for the authorized hostname and only the ports actually scanned. | Pending |
-| `finding-01.png` | Figure 3 — Redacted HTTP response showing the root response over HTTP. | Pending |
-| `finding-02.png` | Figure 4 — Redacted `Set-Cookie` header demonstrating observed cookie attributes; hide the cookie value. | Pending |
-| `finding-03.png` | Figure 5 — Response headers showing the disclosed server/framework information. | Pending |
-| `finding-04.png` | Figure 6 — Response headers showing which security headers were absent in the captured response. | Pending |
+| `reconnaissance.png` | Figure 1 — Acuforum homepage showing the target, visible navigation/features, and the site's training/demo disclaimer. | Added |
+| `nmap.png` | Figure 2 — Nmap 7.92 service/version scan output for `testasp.vulnweb.com`, ports 80 and 443. | Added |
+| `http-headers.txt` | Sanitized `curl.exe -I` response showing status, server/framework headers, cookie attributes with value redacted, and headers absent from this one response. | Added |
+| `search-page.png` | Figure 3 — Search form with the `tfSearch` text field; no search was submitted. | Added |
+| `login-page.png` | Figure 4 — Login form showing username/password fields; no credentials entered or submitted. | Added |
+| `register-page.png` | Figure 5 — Registration form fields; no personal data entered or submitted. | Added |
+| `about-page.png` | Figure 6 — About page warning users not to post sensitive information, email addresses, or real names. | Added |
+| `forum-page.png` | Figure 7 — Forum page listing threads and their `id` parameters; no parameter manipulation performed. | Added |
+| `devtools-issues.png` | Figure 8 — Browser DevTools Issues panel showing CSP/eval and Quirks Mode diagnostics; resource/context not established. | Added |
 
-Only include screenshots you actually captured. If one screenshot demonstrates multiple observations, it may be referenced more than once in the report, provided its caption clearly explains what it shows. Do not mark an item complete until the image has been added and checked.
+The Nmap, homepage, and DevTools images were supplied by the student and copied into this folder without editing. The search, login, registration, about, and forum-page screenshots were captured during non-submitting inspection. The HTTP headers file is a text capture with the cookie value redacted. The supplied Network panel screenshot had no visible request rows and is not used to claim any network result. Do not enter real credentials or personal information in this demonstration application.

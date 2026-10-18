@@ -1,0 +1,18 @@
+Sanitized response-header capture
+Target: http://testasp.vulnweb.com/
+Method: curl.exe -sS -I
+Captured: October 18, 2026
+
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Length: 3538
+Content-Type: text/html
+Server: Microsoft-IIS/8.5
+Set-Cookie: ASPSESSIONID=<redacted>; path=/
+X-Powered-By: ASP.NET
+Date: Sun, 18 Oct 2026 15:08:39 GMT
+
+The ASP session cookie value has been redacted. No Content-Security-Policy,
+X-Frame-Options, or X-Content-Type-Options response header appeared in this
+capture. This is one response only and does not establish behavior on other
+routes or explain the browser DevTools CSP diagnostic.

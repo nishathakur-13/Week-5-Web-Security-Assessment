@@ -1,7 +1,7 @@
 # Week 5: Web Application Security Assessment
 
 **Assignment:** Web Application Security Assessment & Defensive Analysis  
-**Student:** Nisha Kumari *(edit if needed)*  
+**Student:** Nisha Kumari 
 **Track:** Cyber Security – 6 Week Batch  
 **Target:** `testasp.vulnweb.com`  
 **Assessment date:** October 18, 2026
@@ -13,10 +13,19 @@ Week-5-Web-Security-Assessment/
 ├── README.md
 ├── Security-Assessment-Report.md
 └── Evidence/
-    └── README.md
+    ├── README.md
+    ├── about-page.png
+    ├── devtools-issues.png
+    ├── forum-page.png
+    ├── http-headers.txt
+    ├── login-page.png
+    ├── nmap.png
+    ├── reconnaissance.png
+    ├── register-page.png
+    └── search-page.png
 ```
 
-The report is a preliminary assessment based on the limited, non-invasive checks described in it. The evidence folder still needs your own screenshots before submission. Do not present unperformed tests as completed or treat a potential weakness as a confirmed vulnerability.
+The preliminary report now includes the Nmap result, homepage, search/login/registration/about/forum page screenshots, and a sanitized HTTP response-header capture. It still does not claim that authentication or input security was tested. Do not present unperformed tests as completed or treat a potential weakness as a confirmed vulnerability.
 
 ## Assessment scope and safety
 
@@ -24,29 +33,41 @@ Only `testasp.vulnweb.com` is in scope. This work did not submit form data, atte
 
 ## Finish the evidence
 
-Capture your own screenshots and save them in `Evidence/` using the filenames and captions in [Evidence/README.md](Evidence/README.md). In particular, capture the Nmap output and the browser/application observations you personally verify. Update the report's evidence references and any marked unknowns to match those screenshots.
+The evidence folder contains the supplied screenshots plus screenshots captured during non-submitting inspection of in-scope application pages. Cookie values in the HTTP header capture are redacted. See [Evidence/README.md](Evidence/README.md) for captions and remaining evidence needs.
 
-## Optional Nmap command
+## Assessment completion status
 
-If Nmap is installed and your assignment authorization permits this check, run this limited service/version check against the authorized hostname only:
+The required Nmap result, homepage screenshot, browser-mapping screenshots, and sanitized HTTP header capture are included. The report records five response-based security observations and three prioritized findings, while distinguishing browser diagnostics from confirmed weaknesses. Do not claim that SQL injection, directory traversal, authentication, or input validation were tested.
+
+The Nmap screenshot shows the actual scoped service/version check:
 
 ```powershell
 nmap -sV -p 80,443 testasp.vulnweb.com
 ```
 
-Save or screenshot the actual result as `Evidence/nmap.png`. Do not copy sample scan results into the report.
+The screenshot is saved as `Evidence/nmap.png`. Do not copy sample scan results into the report.
+
+Browser mapping identified the visible search, login, registration, about, and forum features and recorded observed form fields and route parameters without submitting inputs. Database technology was not observable and is documented as unknown.
+
+Before submitting, verify all of the following:
+
+- [x] Complete the authorized Nmap check and add `Evidence/nmap.png`.
+- [x] Add the supplied browser homepage screenshot as `Evidence/reconnaissance.png`.
+- [x] Capture browser evidence for the search, login, registration, about, and forum pages without submitting forms or entering personal information.
+- [x] Record actual HTTP response headers in `Evidence/http-headers.txt`, with the session cookie value redacted.
+- [ ] Confirm the student name and batch details are correct.
+- [ ] If your instructor specifically requires screenshots of raw response headers, capture one with the cookie value redacted.
+- [x] Confirm the report includes at least five evidence-supported observations and three prioritized risk assessments.
+- [ ] Commit and push the final files to GitHub, or submit the report and evidence using another allowed option.
 
 ## GitHub submission
 
-Create an empty GitHub repository, then replace the placeholder URL below with its HTTPS or SSH URL and run these commands from this folder:
+This working copy already has the GitHub remote configured. Confirm that it is your intended repository, then run these commands from this folder after your final review:
 
 ```powershell
-git init
 git add README.md Security-Assessment-Report.md Evidence/
 git commit -m "Complete Week 5 web security assessment"
-git branch -M main
-git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
-git push -u origin main
+git push origin main
 ```
 
-Submit the repository URL only after the screenshots are present, report placeholders are resolved, and the repository is accessible to your instructor.
+Submit the repository URL only after the commit is pushed and you have confirmed that your instructor can access it.
